@@ -1,0 +1,28 @@
+@import "abstracts/variables";
+
+// font-family: 'Barlow', sans-serif;
+// font-family: 'Fraunces', serif;
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  font-size: 1.8rem;
+}
