@@ -1,18 +1,15 @@
-@import "abstracts/variables";
-
-// font-family: 'Barlow', sans-serif;
-// font-family: 'Fraunces', serif;
+// font-family: 'Barlow', sans-serif; 600
+// font-family: 'Fraunces', serif; 700, 900
 html {
-  box-sizing: border-box;
   font-size: 62.5%;
 }
 
 *,
 ::before,
 ::after {
-  box-sizing: inherit;
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
 }
 
 .attribution {
@@ -25,4 +22,7 @@ html {
 
 body {
   font-size: 1.8rem;
+  min-height: 80vh;
+  box-sizing: border-box;
+  font-family: "Barlow", sans-serif;
 }

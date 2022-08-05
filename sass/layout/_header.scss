@@ -1,0 +1,26 @@
+.header {
+  width: 100%;
+  min-height: 100rem;
+  background: url(../images/desktop/image-header.jpg) repeat 0 0;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.heading-primary {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1rem;
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  color: $White;
+  margin-top: 16rem;
+  font-size: 5rem;
+}
+
+.img--arrow-down {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

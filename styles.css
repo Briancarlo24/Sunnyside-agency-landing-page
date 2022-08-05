@@ -1,0 +1,64 @@
+/* font-family: 'Barlow', sans-serif;
+ font-family: 'Fraunces', serif; */
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  font-size: 1.8rem;
+}
+
+.navigation {
+  font-family: "Barlow", sans-serif;
+  padding: 3rem 5rem;
+  display: flex;
+  align-items: flex-start;
+  height: 80vh;
+  background-image: url("images/desktop/image-header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navigation__logo {
+  color: #ffffff;
+  font-size: 2rem;
+  background-color: lightgreen;
+}
+
+.navigation__nav {
+  margin-left: auto;
+  font-size: 1.5rem;
+  background-color: lightgreen;
+}
+
+.navigation__item {
+  list-style: none;
+}
+
+.navigation__list {
+  display: flex;
+  gap: 3rem;
+}
+
+.navigation__link {
+  text-decoration: none;
+  color: #ffffff;
+}

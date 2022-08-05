@@ -1,0 +1,50 @@
+.navigation {
+  font-family: "Barlow", sans-serif;
+  padding-block: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  padding-inline: 3rem;
+
+  &__logo {
+    color: $White;
+    font-size: 3rem;
+  }
+
+  &__nav {
+    margin-left: auto;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    gap: calc(1.5rem + 2vw);
+  }
+
+  &__item {
+    list-style: none;
+    font-size: 1.4rem;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &:active,
+    &:visited {
+      cursor: pointer;
+      color: $White;
+    }
+  }
+
+  & .btn--contact {
+    background-color: $White;
+    padding: 1.5rem 2.5rem;
+    border-radius: 2.5rem;
+    color: black;
+    text-transform: uppercase;
+    font-family: "Fraunces", serif;
+    font-weight: 900;
+    font-size: 0.85em;
+  }
+}
