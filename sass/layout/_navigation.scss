@@ -1,50 +1,180 @@
 .navigation {
   font-family: "Barlow", sans-serif;
-  padding-block: 2.5rem;
   display: flex;
   align-items: center;
   gap: 5rem;
+  padding-top: 3.5rem;
   padding-inline: 3rem;
+  position: relative;
+
+  // 600px - mobile
+  @media only screen and (max-width: 37.5em) {
+    padding-top: 4.5rem;
+    padding-inline: 2rem;
+  }
 
   &__logo {
     color: $White;
     font-size: 3rem;
+    margin-right: auto;
   }
 
   &__nav {
-    margin-left: auto;
+    // 600px - mobile
+    @media only screen and (max-width: 37.5em) {
+      z-index: 1000;
+      position: absolute;
+      top: 18rem;
+      left: 0rem;
+      background: $White;
+      display: flex;
+      flex-direction: column;
+      width: calc(100% - 4rem);
+      padding-top: 5rem;
+      padding-bottom: 7rem;
+      margin-left: 50%;
+      transform: translateX(-50%);
+
+      // arrow up
+      &::before {
+        position: absolute;
+        content: "";
+        background-color: inherit;
+        height: 4.5rem;
+        width: 4.5rem;
+        top: -4.5rem;
+        right: 0;
+        clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+      }
+    }
   }
 
   &__list {
     display: flex;
     align-items: center;
     margin-right: 1rem;
-    gap: calc(1.5rem + 2vw);
+    column-gap: calc(1.5rem + 2vw);
+
+    // 600px - mobile
+    @media only screen and (max-width: 37.5em) {
+      margin-right: 0;
+      display: block;
+    }
   }
 
   &__item {
     list-style: none;
     font-size: 1.4rem;
+    cursor: pointer;
   }
 
-  &__link {
-    text-decoration: none;
+  // 600px - mobile
+  @media only screen and (max-width: 37.5em) {
+    color: $Dark-grayish-blue;
+    font-size: 2rem;
+    padding-block: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+}
 
-    &:active,
-    &:visited {
-      cursor: pointer;
-      color: $White;
+&__link {
+  text-decoration: none;
+
+  &:active,
+  &:visited {
+    color: $White;
+    // 600px - mobile
+    @media only screen and (max-width: 37.5em) {
+      color: $Dark-grayish-blue;
     }
   }
+}
 
-  & .btn--contact {
-    background-color: $White;
-    padding: 1.5rem 2.5rem;
-    border-radius: 2.5rem;
-    color: black;
-    text-transform: uppercase;
-    font-family: "Fraunces", serif;
-    font-weight: 900;
-    font-size: 0.85em;
+.btn--contact {
+  background-color: red;
+  padding: 1.5rem 2.5rem;
+  border-radius: 2.5rem;
+  color: $Very-dark-grayish-blue;
+  text-transform: uppercase;
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  font-size: 0.85em;
+
+  &:hover {
+    background-color: red;
+    color: white;
   }
+
+  // 600px - mobile
+  @media only screen and (max-width: 37.5em) {
+    color: $Very-dark-grayish-blue;
+    background-color: $Yellow;
+  }
+}
+
+&__button {
+  cursor: pointer;
+  position: relative;
+
+  // 600px - mobile
+  @media only screen and (min-width: 37.5em) {
+    display: none;
+  }
+}
+
+&__icon {
+  // 600px - mobile
+  @media only screen and (max-width: 37.5em) {
+    background-color: rgba($White, 0.5);
+    width: 4.5rem;
+    height: 2.5px;
+    display: inline-block;
+    margin-top: 50%;
+    transition: all 0.2s ease-out;
+  }
+
+  &--1 {
+    position: absolute;
+    content: "";
+    left: 50%;
+    transform: translateX(-50%);
+    top: -1.25rem;
+  }
+  &--2 {
+    // rotate
+    visibility: visible;
+  }
+  &--3 {
+    position: absolute;
+    content: "";
+    transform: translateX(-50%);
+    top: 1.25rem;
+    left: 50%;
+  }
+}
+
+// JAVASCRIPT CLASSES
+
+// Hide navigation list in mobile
+.hidden {
+  // 600px - mobile
+  @media only screen and (max-width: 37.5em) {
+    display: none;
+  }
+}
+
+// Burger Menu Rotate
+.icon-1 {
+  // rotate
+  top: 0;
+  transform: translateX(-50%) rotate(135deg);
+}
+.icon-2 {
+  background-color: transparent;
+}
+.icon-3 {
+  // rotate
+  top: 0;
+  transform: translateX(-50%) rotate(-135deg);
 }
