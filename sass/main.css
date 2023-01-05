@@ -78,7 +78,7 @@ body {
   letter-spacing: 1rem;
   font-weight: 900;
   color: white;
-  margin-top: 16rem;
+  margin-top: 12rem;
   margin-inline: 2rem;
   font-size: 5rem;
 }
@@ -182,7 +182,7 @@ body {
 
 .header {
   width: 100%;
-  min-height: 100rem;
+  min-height: 80rem;
   background: url(../images/desktop/image-header.jpg) repeat 0 0;
   background-size: cover;
   background-position: center center;
