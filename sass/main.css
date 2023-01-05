@@ -315,6 +315,9 @@ body {
   .navigation__link:hover {
     color: rgba(90, 99, 108, 0.6);
   }
+  .navigation__link:active, .navigation__link:visited {
+    color: rgba(90, 99, 108, 0.6);
+  }
 }
 
 .navigation__link:active, .navigation__link:visited {

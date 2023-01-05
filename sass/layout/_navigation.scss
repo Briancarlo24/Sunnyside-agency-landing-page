@@ -90,6 +90,11 @@
       &:hover {
         color: rgba($Very-dark-grayish-blue, 0.6);
       }
+
+      &:active,
+      &:visited {
+        color: rgba($Very-dark-grayish-blue, 0.6);
+      }
     }
 
     &:active,
