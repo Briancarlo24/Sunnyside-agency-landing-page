@@ -84,8 +84,14 @@
     text-decoration: none;
     color: $White;
 
-    &:active,
-    &:visited {
+    // 600px - mobile
+    @media only screen and (max-width: 37.5em) {
+      &:hover {
+        color: rgba($Very-dark-grayish-blue, 0.6);
+      }
+    }
+
+    &:active {
       color: $White;
       // 600px - mobile
       @media only screen and (max-width: 37.5em) {
@@ -95,13 +101,6 @@
 
     &:hover {
       color: rgba($White, 0.7);
-    }
-
-    // 600px - mobile
-    @media only screen and (max-width: 37.5em) {
-      &:hover {
-        color: rgba($Very-dark-grayish-blue, 0.6);
-      }
     }
   }
 
