@@ -308,6 +308,15 @@ body {
   color: white;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .navigation__link {
+    color: #818498;
+  }
+  .navigation__link:hover {
+    color: rgba(90, 99, 108, 0.6);
+  }
+}
+
 .navigation__link:active, .navigation__link:visited {
   color: white;
 }
@@ -320,12 +329,6 @@ body {
 
 .navigation__link:hover {
   color: rgba(255, 255, 255, 0.7);
-}
-
-@media only screen and (max-width: 37.5em) {
-  .navigation__link:hover {
-    color: rgba(90, 99, 108, 0.6);
-  }
 }
 
 .navigation .btn--contact {
@@ -523,6 +526,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #fffbf8;
 }
 
 @media only screen and (max-width: 37.5em) {
