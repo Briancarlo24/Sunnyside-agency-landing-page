@@ -1,0 +1,125 @@
+// font-family: 'Barlow', sans-serif; 600
+// font-family: 'Fraunces', serif; 700, 900
+
+.even-columns {
+  width: 100%;
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary,
+.btn {
+  font-family: "Fraunces", serif;
+}
+
+.heading-primary {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1rem;
+  font-weight: 900;
+  color: $White;
+  margin-top: 16rem;
+  margin-inline: 2rem;
+  font-size: 5rem;
+}
+
+.heading-secondary {
+  font-weight: 900;
+  font-size: 4.4rem;
+
+  // 900px / 16 = 56.25em
+  @include respond(tab-port) {
+    font-size: 4rem;
+  }
+  // 900px / 16 = 56.25em
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  // 600px / 16 = 37.5em
+  @include respond(phone) {
+    font-size: 3.4rem;
+  }
+}
+
+.heading-tertiary {
+  font-size: 2.4rem;
+  font-weight: 900;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+}
+
+.heading-4 {
+  margin-bottom: 8rem;
+  color: $Grayish-blue;
+  text-transform: uppercase;
+  font-size: medium;
+  letter-spacing: 0.55rem;
+}
+
+.paragraph {
+  font-family: "Barlow", sans-serif;
+  color: $Very-dark-grayish-blue;
+  line-height: 156%;
+}
+
+.btn-text {
+  font-family: "Fraunces", serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  position: relative;
+  z-index: 999;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    background-color: rgba($Yellow, 0.2);
+    border-radius: 25px;
+    height: 1.1rem;
+    width: 14.5rem;
+    left: -0.7rem;
+    top: 1.4rem;
+    z-index: -1;
+
+    // 600px / 16 = 37.5em
+    @include respond(phone) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  // &:hover::after {
+  //   background-color: rgba($Yellow, 0.9);
+  // }
+
+  &:active::after {
+    background-color: rgba($Yellow, 0.9);
+  }
+
+  &--red {
+    &::after {
+      background-color: rgba($Soft-red, 0.2);
+    }
+
+    &:active::after {
+      background-color: rgba($Soft-red, 0.9);
+    }
+
+    // &:hover::after {
+    //   background-color: rgba($Soft-red, 0.9);
+    // }
+  }
+}
+
+.img-graphic-design,
+.img-photography {
+  position: relative;
+}
+
+.padbot {
+  // 600px / 16 = 37.5em
+  @include respond(phone) {
+    margin-bottom: -0.4rem;
+  }
+}

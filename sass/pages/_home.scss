@@ -1,5 +1,262 @@
-.section-about {
-  height: 80vh;
-  background-image: url(../../images/desktop/image-header.jpg);
-  background-size: cover;
+// 1200px / 16 = 75em
+// @include respond(tab-land) {
+//
+// }
+// 900px / 16 = 56.25em
+// @include respond(tab-port) {
+//
+// }
+//600px / 16 = 37.5em
+// @include respond(phone) {
+//
+// }
+//375px / 16 = 23.4375em
+// @include respond(phone-small) {
+//
+// }
+
+.section-services {
+  background-color: $Grayish-white;
+  height: auto;
+
+  display: flex;
+  flex: 1;
+
+  // 600px / 16 = 37.5em
+  @include respond(phone) {
+    flex-direction: column-reverse;
+  }
+
+  &-reverse {
+    // 600px / 16 = 37.5em
+    @include respond(phone) {
+      flex-direction: column;
+    }
+  }
+  &--text {
+    display: grid;
+    place-content: center;
+    justify-content: center;
+    flex: 1;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 5rem;
+
+      width: 75%;
+      justify-self: center;
+
+      // 1200px / 16 = 75em
+      @include respond(tab-land) {
+        gap: 3.5rem;
+      }
+      // 900px / 16 = 56.25em
+      @include respond(tab-port) {
+        gap: 1.5rem;
+        width: 80%;
+      }
+      // 600px / 16 = 37.5em
+      @include respond(phone) {
+        gap: 3.5rem;
+        padding-block: calc(4rem + 10vw);
+        text-align: center;
+      }
+      // 375px / 16 = 23.4375em
+      @include respond(phone-small) {
+      }
+    }
+  }
+
+  &--image {
+    flex: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // & > * {
+  //   border: 1px solid red;
+  // }
+}
+
+.section-testimonials {
+  padding-block: 14rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // 600px / 16 = 37.5em
+  @include respond(phone) {
+    padding-block: 10rem;
+  }
+  // 375px / 16 = 23.4375em
+  @include respond(phone-small) {
+    padding-block: 8rem;
+  }
+}
+
+.testimonials {
+  display: flex;
+  padding-inline: 5rem;
+  gap: 5rem;
+  line-height: 2.8rem;
+  max-width: 115rem;
+  font-size: 1.6rem;
+
+  // 1200px / 16 = 75em
+  @include respond(tab-land) {
+    gap: 3rem;
+  }
+  // 900px / 16 = 56.25em
+  @include respond(tab-port) {
+    flex-direction: column;
+    max-width: 43rem;
+    font-size: 1.8rem;
+    gap: 5rem;
+    padding-inline: 3rem;
+  }
+  // 600px / 16 = 37.5em
+  @include respond(phone) {
+    gap: 8rem;
+  }
+  // 375px / 16 = 23.4375em
+  @include respond(phone-small) {
+  }
+
+  &-profile-name {
+    font-family: "Fraunces", serif;
+    font-weight: 900;
+    color: $Very-dark-desat-blue;
+
+    margin-top: 5rem;
+
+    // 600px / 16 = 37.5em
+    @include respond(phone) {
+      margin-top: 3rem;
+    }
+  }
+
+  &-profile-status {
+    color: $Grayish-blue;
+    font-size: 1.1rem;
+  }
+
+  & > * {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  &-container {
+    color: $Very-dark-grayish-blue;
+
+    & img {
+      border-radius: 100px;
+      height: 6rem;
+      margin-bottom: 5rem;
+
+      // 600px / 16 = 37.5em
+      @include respond(phone) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
+
+.content--wrapper {
+  position: absolute;
+  width: 35rem;
+  text-align: center;
+  bottom: 5vw;
+  left: 50%;
+  transform: translateX(-50%);
+
+  // 600px / 16 = 37.5em
+  @include respond(phone) {
+    bottom: 20%;
+  }
+  & > * {
+    color: $Dark-desat-cyan;
+  }
+
+  & > P {
+    font-size: 0.9em;
+  }
+}
+
+.section-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  // 600px / 16 = 37.5em
+  @include respond(phone) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--image {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  text-align: center;
+
+  background-color: #8ad2c4;
+  padding-block: 7rem;
+
+  // 600px / 16 = 37.5em
+  @include respond(phone) {
+    padding-block: 7rem;
+  }
+
+  &__logo {
+    width: 16rem;
+    margin-inline: auto;
+    filter: invert(66%) sepia(70%) saturate(379%) hue-rotate(116deg)
+      brightness(93%) contrast(83%);
+  }
+
+  &__nav-container {
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    margin-bottom: 5rem;
+
+    & a {
+      text-decoration: none;
+      color: $Dark-moderate-cyan;
+
+      &:hover {
+        color: rgba($Dark-moderate-cyan, 0.7);
+      }
+
+      &:active {
+        color: $White;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    gap: 3.5rem;
+
+    &:hover {
+      color: rgba($Dark-moderate-cyan, 0.7);
+    }
+    &:active {
+      color: $White;
+    }
+  }
 }

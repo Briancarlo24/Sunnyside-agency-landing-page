@@ -1,5 +1,4 @@
 .navigation {
-  font-family: "Barlow", sans-serif;
   display: flex;
   align-items: center;
   gap: 5rem;
@@ -7,16 +6,21 @@
   padding-inline: 3rem;
   position: relative;
 
-  // 600px - mobile
-  @media only screen and (max-width: 37.5em) {
+  // 600px
+  @include respond(phone) {
     padding-top: 4.5rem;
     padding-inline: 2rem;
   }
 
   &__logo {
-    color: $White;
     font-size: 3rem;
     margin-right: auto;
+
+    & img {
+      width: 14rem;
+      filter: invert(0%) sepia(0%) saturate(7490%) hue-rotate(155deg)
+        brightness(101%) contrast(105%);
+    }
   }
 
   &__nav {
@@ -58,7 +62,7 @@
     // 600px - mobile
     @media only screen and (max-width: 37.5em) {
       margin-right: 0;
-      display: block;
+      flex-direction: column;
     }
   }
 
@@ -66,91 +70,103 @@
     list-style: none;
     font-size: 1.4rem;
     cursor: pointer;
-  }
 
-  // 600px - mobile
-  @media only screen and (max-width: 37.5em) {
-    color: $Dark-grayish-blue;
-    font-size: 2rem;
-    padding-block: 2rem;
-    display: flex;
-    justify-content: center;
-  }
-}
-
-&__link {
-  text-decoration: none;
-
-  &:active,
-  &:visited {
-    color: $White;
     // 600px - mobile
     @media only screen and (max-width: 37.5em) {
       color: $Dark-grayish-blue;
+      font-size: 2rem;
+      padding-block: 2rem;
+      display: flex;
+      justify-content: center;
     }
   }
-}
 
-.btn--contact {
-  background-color: red;
-  padding: 1.5rem 2.5rem;
-  border-radius: 2.5rem;
-  color: $Very-dark-grayish-blue;
-  text-transform: uppercase;
-  font-family: "Fraunces", serif;
-  font-weight: 900;
-  font-size: 0.85em;
+  &__link {
+    text-decoration: none;
 
-  &:hover {
-    background-color: red;
-    color: white;
+    &:active,
+    &:visited {
+      color: $White;
+      // 600px - mobile
+      @media only screen and (max-width: 37.5em) {
+        color: $Dark-grayish-blue;
+      }
+    }
+
+    &:hover {
+      color: rgba($White, 0.7);
+    }
+
+    // 600px - mobile
+    @media only screen and (max-width: 37.5em) {
+      &:hover {
+        color: rgba($Very-dark-grayish-blue, 0.6);
+      }
+    }
   }
 
-  // 600px - mobile
-  @media only screen and (max-width: 37.5em) {
+  & .btn--contact {
+    background-color: $White;
+    padding: 1.5rem 2.5rem;
+    border-radius: 2.5rem;
     color: $Very-dark-grayish-blue;
-    background-color: $Yellow;
-  }
-}
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 0.85em;
 
-&__button {
-  cursor: pointer;
-  position: relative;
+    &:hover {
+      background-color: rgba($White, 0.7);
+      color: $Very-dark-grayish-blue;
+    }
 
-  // 600px - mobile
-  @media only screen and (min-width: 37.5em) {
-    display: none;
-  }
-}
-
-&__icon {
-  // 600px - mobile
-  @media only screen and (max-width: 37.5em) {
-    background-color: rgba($White, 0.5);
-    width: 4.5rem;
-    height: 2.5px;
-    display: inline-block;
-    margin-top: 50%;
-    transition: all 0.2s ease-out;
+    // 600px - mobile
+    @media only screen and (max-width: 37.5em) {
+      background-color: $Yellow;
+      &:hover {
+        background-color: rgba($Yellow, 0.7);
+      }
+    }
   }
 
-  &--1 {
-    position: absolute;
-    content: "";
-    left: 50%;
-    transform: translateX(-50%);
-    top: -1.25rem;
+  &__button {
+    cursor: pointer;
+    position: relative;
+
+    // 600px - mobile
+    @media only screen and (min-width: 37.5em) {
+      display: none;
+    }
   }
-  &--2 {
-    // rotate
-    visibility: visible;
-  }
-  &--3 {
-    position: absolute;
-    content: "";
-    transform: translateX(-50%);
-    top: 1.25rem;
-    left: 50%;
+
+  &__icon {
+    // 600px - mobile
+    @media only screen and (max-width: 37.5em) {
+      background-color: rgba($White, 0.9);
+      width: 4.5rem;
+      height: 2.5px;
+      display: inline-block;
+      margin-top: 50%;
+      transition: all 0.2s ease-out;
+    }
+
+    &--1 {
+      position: absolute;
+      content: "";
+      left: 50%;
+      transform: translateX(-50%);
+      top: -1.25rem;
+    }
+    &--2 {
+      // rotate
+      visibility: visible;
+    }
+    &--3 {
+      position: absolute;
+      content: "";
+      transform: translateX(-50%);
+      top: 1.25rem;
+      left: 50%;
+    }
   }
 }
 
